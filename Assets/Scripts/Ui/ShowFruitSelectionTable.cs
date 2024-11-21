@@ -20,9 +20,6 @@ public class ShowFruitSelectionTable : MonoBehaviour
     public List<ListFruit> listFruits;
     [SerializeField] private GameObject PanelFruit;
 
-    private readonly Vector2 PositionStart = new Vector2(360f, 1421f);
-    private readonly Vector2 PositionLast = new Vector2(360f, 905f);
-
     void Start()
     {
        
@@ -87,7 +84,7 @@ public class ShowFruitSelectionTable : MonoBehaviour
         Debug.Log("Saved SelectedFruitIndex: " + index);
 
         RectTransform rectTransform=PanelFruit.GetComponent<RectTransform>();
-        rectTransform.DOAnchorPosY(200f,0.5f).SetEase(Ease.InBounce);
+        rectTransform.DOAnchorPosY(340f,0.5f).SetEase(Ease.InBounce);
         AudioManage.Instance.AudioClosePanel();
 
     }
@@ -113,7 +110,7 @@ public class ShowFruitSelectionTable : MonoBehaviour
     {
         //LeanTween.movean(PanelFruit, PositionLast, 0.7f).setEase(LeanTweenType.easeOutBounce);
         RectTransform rectTransform = PanelFruit.GetComponent<RectTransform>();
-        rectTransform.DOAnchorPosY(-450f,0.5f).SetEase(Ease.OutBounce);
+        rectTransform.DOAnchorPosY(-500f,0.5f).SetEase(Ease.OutBounce);
         AudioManage.Instance.AudioShowPanel();
     }
 }
